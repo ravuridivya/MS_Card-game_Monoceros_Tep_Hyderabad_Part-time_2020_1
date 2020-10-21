@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BlackJack</title>
+	<link rel="stylesheet" type="text/css" href="stylesheets/blackjack.css">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+</head>
+<body>
+	<div>
+		<header>
+			<div class="p-2 color-white" title="BlackJack">
+				<b class="font-roboto font-large-2" id="highScore" title="Highest Score"></b>
+				<b class=" title-name float-center font-style">BLACKJACK</b>
+				<!--<img class="height-1" src="resources/chips/bj11.jpg">-->
+				<span class="float-right font-large-1">
+					<button class="btn font-style font-large-1 header-background inline" id="myBtn" title="How To Play"></button>
+			    </span>
+				</div>
+		</header>
+	</div>
+	
+	<div id="myModal" class="modal">
+		<!-- Modal content -->
+			<div class="modal-content">
+			  <span class="close">&times;</span>
+			</div>
+</div>
+  
+
+	<div class="outer-container  board color-white">
+		
+		<div class="text-center p-1 font-large font-roboto" id="information"></div>
+		<div class="col1 p-2">
+			<input type="image" id="rupee1" onclick="amt(id)" src="resources/chips/1.jpg" >
+			<input type="image" id="rupees10" onclick="amt(id)" src="resources/chips/10.jpg">
+			<input type="image" id="rupees100" onclick="amt(id)" src="resources/chips/100.jpg">
+			<input type="image" id="rupees500" onclick="amt(id)" src="resources/chips/500.jpg">
+			<div>
+				<p class="m-left-1 font-roboto font-large-1 color-red" id="balance" title="Account Balance"></p>
+			</div>
+		</div>
+		<div class="col2 m-2">
+			<p class="color-white font-large font-roboto p-2 color-powderblue">Player</p>
+			<div  id="playerCard"></div>
+			<div>
+				<p class="p-2 font-roboto font-large-1 color-yellow" id="playerCardValue">Cards Value :</p>
+				<p class="p-2 font-roboto font-large-1 color-cyan" id="bets">Bet Money: Rs-0</p>
+			</div>
+			<div>
+				<button class="btn" id="deal_btn" onclick="deal()">Deal</button>
+				<button class="btn" id="hit_btn" onclick="hit()">Hit</button>
+				<button class="btn" id="stand_btn" onclick="stand()">Stand</button>
+				<button class="btn" id="double_btn" onclick="double()">Double Down</button>
+				<button class="btn" id="again_btn" onclick="hideCards()">Play Again?</button>
+				<button class="btn" id="newGame_btn" onclick="restart()">New Game?</button>
+			</div>
+		</div>
+		<div class="col3 m-2">
+			<p class="font-large color-white font-roboto p-2 color-powderblue">Dealer</p>
+			<div id="dealerCard">
+				<!--<img id="backImg" src="resources/backside.jpg">-->
+			</div>
+			<div>
+				<p class="p-2 font-roboto font-large-1 color-yellow" id="dealerCardValue">Cards Value :</p>
+			</div>
+		</div>
+	</div>
+	
+	<script src="scripts/blackjack.js"></script>
+</body>
+</html>
